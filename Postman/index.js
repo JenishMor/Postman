@@ -1,9 +1,4 @@
-console.log('This is project 6');
-//This is all about project 6 in which project we discuss about get request and post request
-//This is project in which we can throw get and post request
-
 //utility function:
-//create new div and store params in it
 function getElementFromString(string) {
     let div = document.createElement('div');
     div.innerHTML = string;
@@ -95,11 +90,6 @@ submit.addEventListener('click', () => {
         data = document.getElementById('jsonContent').value;
     }
 
-    // console.log('URL: ', url);
-    // console.log('Request type: ', requestType);
-    // console.log('content type: ', contentType);
-    // console.log('Data: ', data);
-
     //If the request type is get throw get request:
     if (requestType == 'GET') {
         fetch(url, {
@@ -107,11 +97,11 @@ submit.addEventListener('click', () => {
         })
             .then(response => response.text())
             .then((text) => {
-                // document.getElementById('responceJson').value = text;
                 responsePre.innerHTML = text;
                 Prism.highlightAll();
             });
     }
+    //else throw post request:
     else {
         fetch(url, {
             method: 'POST',
@@ -122,7 +112,6 @@ submit.addEventListener('click', () => {
         })
             .then(response => response.text())
             .then((text) => {
-                // document.getElementById('responceJson').value = text;
                 responsePre.innerHTML = text;
                 Prism.highlightAll();
             });
