@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./prism.css">
+    <title>Post Master</title>
+    <style>
+        #responsePre{
+            max-height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PostMaster</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="my-3">Welcome to Post Master</h2>
+    </div>
+
+    <div class="container">
+        <!-- Url box -->
+        <div class="mb-3 row">
+            <label for="url" class="col-sm-2 col-form-label">URL</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="urlBox" placeholder="Enter URL here">
+            </div>
+        </div>
+
+        <!-- Method -->
+        <div class="mb-3 row">
+            <label for="url" class="col-sm-2 col-form-label">Request Type</label>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="request" id="Get" value="GET" checked>
+                    <label class="form-check-label" for="Get">
+                        GET
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="request" id="Post" value="POST">
+                    <label class="form-check-label" for="Post">
+                        POST
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Type -->
+        <div class="mb-3 row">
+            <label for="url" class="col-sm-2 col-form-label">Content Type</label>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="content" id="jsonRadio" value="Json" checked>
+                    <label class="form-check-label" for="json">
+                        JSON
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="content" id="paramRadio" value="Params">
+                    <label class="form-check-label" for="parameter">
+                        Custom Parameters
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Json request box -->
+        <div id="requestJsonBox" class="my-3">
+            <div class="form-group row">
+                <label for="json" class="col-sm-2 col-form-label">Enter Request Json</label>
+                <div class="col-sm-10">
+                    <textarea type="text" class="form-control" id="jsonContent"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prameters box -->
+        <div id="parameterBox">
+            <div class="form-row">
+                <label for="url" class="col-sm-2 col-form-label">Prameter 1</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="parameterKey1" placeholder="Enter key of parameter 1">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="parameterValue1" placeholder="Enter value of parameter 1">
+                </div>
+                <button id="addParam" class="btn btn-primary">+</button>
+            </div>
+            <div id="params">
+                <!-- js content -->
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="mb-3 row my-4">
+            <div class="col-sm-10">
+                <button class="btn btn-primary" id="submit">Submit</button>
+            </div>
+        </div>
+
+        <!-- Responce Json -->
+        <div id="responceJsonBox" class="my-3">
+            <div class="form-group row">
+                <label for="responceJson" class="col-sm-2 col-form-label">Responce</label>
+                <div class="col-sm-10" id="responseBox">
+                    <!-- <textarea type="text" class="form-control" id="responceJson" rows="10"></textarea> -->
+                    <pre id='responsePre' class="language-javascript"> <code id='responsePrism' class="language-javascript"> Your response will appear here...</code> </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+<script src="./index.js"></script>
+<script src="./prism.js"></script>
+</html>
